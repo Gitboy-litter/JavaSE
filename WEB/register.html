@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        h1{
+            text-align: center;
+            color: aqua;
+            opacity: 0.5;
+        }
+        .title{
+            text-align: center;
+            font-size: 30px;
+            color: black;
+            background-color: aliceblue;
+            opacity: 0.7;
+        }
+        .register {
+            background-color: black;
+            opacity: 0.5;
+            margin: auto;
+            margin-top: 300px;
+            height: 500px;
+            width: 400px;
+        }
+        .password{
+            border: solid 1px black;
+            font-size: 40px;
+            width: 250px;
+            opacity: 0.4;
+        }
+        .confirm{
+            border: solid 1px black;
+            font-size: 40px;
+            width: 250px;
+            opacity: 0.4;
+        }
+        .username{
+            border: solid 1px black;
+            font-size: 40px;
+            width: 250px;
+            opacity: 0.4;
+        }
+        .register label{
+            margin-left: 10px;
+            font-size: 40px;
+            color: skyblue;
+        }
+        .submit{
+            margin-left: 150px;
+            width: 100px;
+            height: 70px;
+            font-size: 40px;
+            color: skyblue;
+            opacity: 0.7;
+        }
+    </style>
+    <script src="jq/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $(".submit").on("click",function () {
+                console.log($("input").prop("value"))
+                if($("input").prop("value")==""){
+                    alert("用户名不可以为空");
+                }
+                var a=$(".password").prop("value");
+                var b=$(".confirm").prop("value");
+                if (a!=b){
+                    alert("两次密码不准确");
+                }
+            }).on("mouseenter",function () {
+                $(this).css("opacity",1)
+            }).on("mouseleave",function () {
+                $(this).css("opacity",0.5)
+            })
+
+        })
+    </script>
+</head>
+<body background="img/timg.jpg">
+    <div class="title">不知名的小系统</div>
+    <div class="register">
+        <form>
+            <h1 >注册界面</h1>
+            <label>账号:</label>
+            <input type="text" class="username" name="username"><br><br>
+            <label>密码:</label>
+            <input type="password" class="password" name="password" ><br><br>
+            <label>确认:</label>
+            <input type="password" class="confirm" name="password"><br><br>
+            <input type="submit" class="submit" value="注册">
+        </form>
+    </div>
+</body>
+</html>

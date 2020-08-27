@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        h1{
+            text-align: center;
+            color: aqua;
+            opacity: 0.5;
+        }
+        .title{
+            text-align: center;
+            font-size: 30px;
+            color: black;
+            background-color: aliceblue;
+            opacity: 0.7;
+        }
+        .login {
+            background-color: black;
+            opacity: 0.5;
+            margin: auto;
+            margin-top: 300px;
+            height: 500px;
+            width: 400px;
+        }
+        .password{
+            border: solid 1px black;
+            font-size: 40px;
+            width: 250px;
+            opacity: 0.1;
+        }
+        .username{
+            border: solid 1px black;
+            font-size: 40px;
+            width: 250px;
+            opacity: 0.1;
+        }
+        .login label{
+            margin-left: 10px;
+            font-size: 40px;
+            color: skyblue;
+        }
+        .submit{
+            margin-left: 150px;
+            width: 100px;
+            height: 70px;
+            font-size: 40px;
+            color: skyblue;
+            opacity: 0.7;
+        }
+        .register{
+            margin-left: 150px;
+            width: 100px;
+            height: 70px;
+            font-size: 40px;
+            color: skyblue;
+            opacity: 0.7;
+        }
+    </style>
+    <script src="jq/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            var flag=false;
+            var x,y;
+            $(".login").on("mousedown",function (e) {
+                var mout=$(".login");
+                if (!flag){
+                    flag=true;
+                    x=e.pageX-parseInt($(".login").css("margin-left"));
+                    y=e.pageY-parseInt($(".login").css("margin-top"));
+                }else {
+                    flag=false;
+                }
+            }).on("mousemove",function (e) {
+                if (flag) {
+                    var a=e.pageX-x;
+                    var b=e.pageY-y;
+                    $(".login").css({marginTop:b,marginLeft:a})
+                    $(".login").css({backgroundColor:"white",opacity:0.5})
+                }
+            }).on("mouseup",function () {
+                flag=false;
+            }).on("mouseleave",function () {
+                $(".login").css({backgroundColor:"black",opacity:0.5})
+            })
+            $(".submit").on("mousedown",function () {
+                $(this).css("background-color","red")
+            })
+            $(".register").on("mousedown",function () {
+                $(this).css("background-color","red")
+            })
+        })
+    </script>
+</head>
+<body background="img/timg.jpg">
+<div class="title">不知名的小系统</div>
+<div class="login">
+    <form>
+        <h1 >登陆界面</h1>
+        <label>账号:</label>
+        <input type="text" class="username" name="username"><br><br>
+        <label>密码:</label>
+        <input type="password" class="password" name="password"><br><br>
+        <input type="submit" class="submit" value="登录">
+    </form>
+    <h1>没有账户？点击这里</h1>
+    <input type="button" value="注册" class="register">
+</div>
+</body>
+</html>
