@@ -32,6 +32,7 @@ public class Test {
 //        for (File file1 : files) {
 //            System.out.println(file1.getName());
 //        }
+System.out.println("hello");
         FileWriter fileWriter=new FileWriter(file);
         char[] a={'齐','天','大','圣'};
         fileWriter.write(a);
