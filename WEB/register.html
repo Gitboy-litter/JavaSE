@@ -62,30 +62,31 @@
     </style>
     <script src="jq/jquery-1.12.4.min.js"></script>
     <script>
-        $(function () {
-            $(".submit").on("click",function () {
-                console.log($("input").prop("value"))
-                if($("input").prop("value")==""){
-                    alert("用户名不可以为空");
-                }
-                var a=$(".password").prop("value");
-                var b=$(".confirm").prop("value");
-                if (a!=b){
-                    alert("两次密码不准确");
-                }
-            }).on("mouseenter",function () {
-                $(this).css("opacity",1)
-            }).on("mouseleave",function () {
-                $(this).css("opacity",0.5)
-            })
-
+        $(function check() {
+                $(".submit").on("click", function () {
+                    console.log($("input").prop("value"))
+                    if ($("input").prop("value") == "") {
+                        alert("用户名不可以为空");
+                        return false;
+                    }
+                    var a = $(".password").prop("value");
+                    var b = $(".confirm").prop("value");
+                    if (a != b) {
+                        alert("两次密码不准确");
+                        return false;
+                    }
+                }).on("mouseenter", function () {
+                    $(this).css("opacity", 1)
+                }).on("mouseleave", function () {
+                    $(this).css("opacity", 0.5)
+                })
         })
     </script>
 </head>
 <body background="img/timg.jpg">
     <div class="title">不知名的小系统</div>
     <div class="register">
-        <form>
+        <form  onsubmit="return check()" action="Login.html">
             <h1 >注册界面</h1>
             <label>账号:</label>
             <input type="text" class="username" name="username"><br><br>

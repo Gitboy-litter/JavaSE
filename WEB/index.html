@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .Bound{
+            background: skyblue;
+            height: 50px;
+            opacity: 0.7;
+        }
+        .link{
+            margin-left: 1400px;
+            margin-top: -28px;
+        }
+        .link li{
+            font-size: 18px;
+            margin-left: 10px;
+           list-style: none;
+            float: left;
+            color: black;
+        }
+        h1{
+            margin-left: 400px;
+            color: black;
+            font-style: italic;
+        }
+        .search{
+            position: absolute;
+            height: 30px;
+            width: 200px;
+            margin-left: 480px;
+            margin-top: -33px;
+            background-color: lightblue;
+            border: solid 1px floralwhite;
+        }
+        .button{
+            position: absolute;
+            margin-left: 700px;
+            margin-top: -31px;
+            height: 30px;
+            border: solid 1px skyblue;
+            background-color: lightyellow;
+        }
+        .content{
+            width: 200px;
+            margin-left: 300px;
+        }
+        .navigation li{
+            text-align: center;
+            list-style-type: none;
+            height: 40px;
+            margin-top: 5px;
+            width: 100px;
+            font-size: 24px;
+        }
+    </style>
+    <script src="jq/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $(".button").on("click",function () {
+                if($(".search").prop("value")==""){
+                    alert("搜索框内容不可以为空");
+                }
+            })
+            $(".link").on("mouseenter","li",function () {
+                $(this).css("color","red")
+            }).on("mouseleave","li",function () {
+                $(this).css("color","black")
+            })
+            $(".navigation").on("mouseenter","li",function (){
+                $(this).css("background-color","skyblue")
+            }).on("mouseleave","li",function () {
+                $(this).css("background-color", "")
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="Bound">
+    <h1>论坛</h1>
+    <input type="text" class="search">
+    <input type="button" class="button" value="搜索">
+    <ul class="link">
+        <a href="#"><li>博客</li></a>
+        <a href="#"><li>关注</li></a>
+        <a href="#"><li>邮件</li></a>
+        <a href="#"><li>博客</li></a>
+    </ul>
+</div>
+<div class="content">
+    <ul class="navigation">
+        <li style="background-color: skyblue"><a href="#" style="text-decoration: none; color: black">导航</a></li>
+        <li><a href="#" style="text-decoration: none; color: black">娱乐</a></li>
+        <li><a href="#" style="text-decoration: none; color: black">科技</a></li>
+        <li><a href="#" style="text-decoration: none; color: black">新闻</a></li>
+        <li><a href="#" style="text-decoration: none; color: black">学习</a></li>
+        <li><a href="#" style="text-decoration: none; color: black">时尚</a></li>
+    </ul >
+</div>
+<div>
+
+</div>
+</body>
+</html>
