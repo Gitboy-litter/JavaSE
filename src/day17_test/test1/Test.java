@@ -24,7 +24,7 @@ public class Test {
 //        countDownLatch.await();
 //        countDownLatch.countDown();
         File file=new File("d:\\book\\ez.txt");
-     //   String[] list = file.list();
+        //   String[] list = file.list();
 //        for (String s : list) {
 //            System.out.println(s);
 //        }
@@ -32,9 +32,9 @@ public class Test {
 //        for (File file1 : files) {
 //            System.out.println(file1.getName());
 //        }
-System.out.println("hello");
+        System.out.println("hello");
         FileWriter fileWriter=new FileWriter(file);
-        char[] a={'齐','天','大','圣'};
+        char[] a={'a','b','c','d'};
         fileWriter.write(a);
         fileWriter.close();
         FileReader fileReader=new FileReader(file);
